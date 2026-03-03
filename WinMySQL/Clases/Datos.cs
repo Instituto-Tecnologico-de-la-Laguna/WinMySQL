@@ -55,5 +55,21 @@ namespace WinMySQL.Clases
                 return null;
             }
         }
-    }
+
+        public bool ejecutarComando(String comando)
+        {
+            try { 
+                Conectar();
+                MySqlCommand cmd= new MySqlCommand(comando,conexion);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex) { 
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+            
+        }
+    }   
 }
