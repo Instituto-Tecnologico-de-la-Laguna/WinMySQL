@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             splitContainer1 = new SplitContainer();
-            dgvMaterias = new DataGridView();
-            label1 = new Label();
-            txtMateria = new TextBox();
             btnAgregarMateria = new Button();
+            txtMateria = new TextBox();
+            label1 = new Label();
+            dgvMaterias = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -52,39 +52,14 @@
             splitContainer1.Panel1.Controls.Add(btnAgregarMateria);
             splitContainer1.Panel1.Controls.Add(txtMateria);
             splitContainer1.Panel1.Controls.Add(label1);
+         
             // 
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(dgvMaterias);
             splitContainer1.Size = new Size(800, 450);
-            splitContainer1.SplitterDistance = 98;
+            splitContainer1.SplitterDistance = 97;
             splitContainer1.TabIndex = 0;
-            // 
-            // dgvMaterias
-            // 
-            dgvMaterias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMaterias.Dock = DockStyle.Fill;
-            dgvMaterias.Location = new Point(0, 0);
-            dgvMaterias.Name = "dgvMaterias";
-            dgvMaterias.RowHeadersWidth = 62;
-            dgvMaterias.Size = new Size(800, 348);
-            dgvMaterias.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(63, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Buscar";
-            // 
-            // txtMateria
-            // 
-            txtMateria.Location = new Point(12, 37);
-            txtMateria.Name = "txtMateria";
-            txtMateria.Size = new Size(550, 31);
-            txtMateria.TabIndex = 1;
             // 
             // btnAgregarMateria
             // 
@@ -95,6 +70,32 @@
             btnAgregarMateria.Text = "Agregar";
             btnAgregarMateria.UseVisualStyleBackColor = true;
             // 
+            // txtMateria
+            // 
+            txtMateria.Location = new Point(12, 37);
+            txtMateria.Name = "txtMateria";
+            txtMateria.Size = new Size(550, 31);
+            txtMateria.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(63, 25);
+            label1.TabIndex = 0;
+            label1.Text = "Buscar";
+            // 
+            // dgvMaterias
+            // 
+            dgvMaterias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMaterias.Dock = DockStyle.Fill;
+            dgvMaterias.Location = new Point(0, 0);
+            dgvMaterias.Name = "dgvMaterias";
+            dgvMaterias.RowHeadersWidth = 62;
+            dgvMaterias.Size = new Size(800, 349);
+            dgvMaterias.TabIndex = 0;
+            // 
             // frmMaterias
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -103,6 +104,7 @@
             Controls.Add(splitContainer1);
             Name = "frmMaterias";
             Text = "Materias";
+            Load += frmMaterias_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
