@@ -16,14 +16,27 @@ namespace WinMySQL.Views
         public frmMaterias()
         {
             InitializeComponent();
-        }       
+        }
 
         private void frmMaterias_Load(object sender, EventArgs e)
         {
-            try {
-                ds=datos.ejecutar("Select * from Materias");
-                if (ds != null) { 
-                dgvMaterias.DataSource = ds.Tables[0];
+           
+        }
+
+        private void btnAgregarMateria_Click(object sender, EventArgs e)
+        {
+            frmMateria materia = new frmMateria();
+            materia.ShowDialog();
+        }
+
+        private void frmMaterias_Activated(object sender, EventArgs e)
+        {
+            try
+            {
+                ds = datos.ejecutar("Select * from Materias");
+                if (ds != null)
+                {
+                    dgvMaterias.DataSource = ds.Tables[0];
                 }
             }
             catch (Exception ex) { }

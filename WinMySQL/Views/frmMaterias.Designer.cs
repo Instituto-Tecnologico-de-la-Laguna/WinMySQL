@@ -52,13 +52,12 @@
             splitContainer1.Panel1.Controls.Add(btnAgregarMateria);
             splitContainer1.Panel1.Controls.Add(txtMateria);
             splitContainer1.Panel1.Controls.Add(label1);
-         
             // 
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(dgvMaterias);
             splitContainer1.Size = new Size(800, 450);
-            splitContainer1.SplitterDistance = 97;
+            splitContainer1.SplitterDistance = 96;
             splitContainer1.TabIndex = 0;
             // 
             // btnAgregarMateria
@@ -69,6 +68,7 @@
             btnAgregarMateria.TabIndex = 2;
             btnAgregarMateria.Text = "Agregar";
             btnAgregarMateria.UseVisualStyleBackColor = true;
+            btnAgregarMateria.Click += btnAgregarMateria_Click;
             // 
             // txtMateria
             // 
@@ -88,12 +88,16 @@
             // 
             // dgvMaterias
             // 
+            dgvMaterias.AllowUserToAddRows = false;
+            dgvMaterias.AllowUserToDeleteRows = false;
+            dgvMaterias.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvMaterias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMaterias.Dock = DockStyle.Fill;
             dgvMaterias.Location = new Point(0, 0);
             dgvMaterias.Name = "dgvMaterias";
+            dgvMaterias.ReadOnly = true;
             dgvMaterias.RowHeadersWidth = 62;
-            dgvMaterias.Size = new Size(800, 349);
+            dgvMaterias.Size = new Size(800, 350);
             dgvMaterias.TabIndex = 0;
             // 
             // frmMaterias
@@ -104,6 +108,7 @@
             Controls.Add(splitContainer1);
             Name = "frmMaterias";
             Text = "Materias";
+            Activated += frmMaterias_Activated;
             Load += frmMaterias_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();

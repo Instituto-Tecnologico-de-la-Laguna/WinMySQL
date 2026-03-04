@@ -11,20 +11,56 @@ namespace WinMySQL.Views
 {
     public partial class frmMateria : Form
     {
-        Datos dt= new Datos();
+        int id = 0;
+        bool updating = false;
+        Datos dt = new Datos();
         public frmMateria()
         {
             InitializeComponent();
         }
 
+        public frmMateria(int id, string materia, string cve)
+        { 
+            InitializeComponent();
+            this.id = id;
+            txtMateria.Text = materia;
+            txtCVE.Text = cve;
+            updating = true;
+        }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            bool resultado = dt.ejecutarComando(
-                $"Insert into Materias (Materia,CVE) " +
-                $"values ('{txtMateria.Text}','{txtCVE.Text}')");
+            if (updating == false)
+            {
+                bool resultado = dt.ejecutarComando(
+                    $"Insert into Materias (Materia,CVE) " +
+                    $"values ('{txtMateria.Text}','{txtCVE.Text}')");
 
-            if ( resultado ) {MessageBox.Show("Materia agregada correctamente");}
-             else {MessageBox.Show("Error al agregar la materia");
+                if (resultado)
+                {
+                    MessageBox.Show("Materia agregada correctamente");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar la materia");
+                }
             }
+            else
+            {
+                bool resultado = dt.ejecutarComando(
+                    $"Update Materias set Materia='{txtMateria.Text}', CVE='{txtCVE.Text}' " +
+                    $"where id={id}");
+                if (resultado)
+                {
+                    MessageBox.Show("Materia actualizada correctamente");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar la materia");
+                }
+            }
+        }
     }
 }
