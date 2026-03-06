@@ -50,7 +50,7 @@ namespace WinMySQL.Views
             {
                 bool resultado = dt.ejecutarComando(
                     $"Update Materias set Materia='{txtMateria.Text}', CVE='{txtCVE.Text}' " +
-                    $"where id={id}");
+                    $"where idMateria={id}");
                 if (resultado)
                 {
                     MessageBox.Show("Materia actualizada correctamente");

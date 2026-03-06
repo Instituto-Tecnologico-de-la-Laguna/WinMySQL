@@ -99,6 +99,7 @@
             dgvMaterias.RowHeadersWidth = 62;
             dgvMaterias.Size = new Size(800, 350);
             dgvMaterias.TabIndex = 0;
+            dgvMaterias.CellContentDoubleClick += dgvMaterias_CellContentDoubleClick;
             // 
             // frmMaterias
             // 
