@@ -11,8 +11,13 @@ namespace WinMySQL
 
         private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmMaterias materias= new frmMaterias();
+            frmMaterias materias = new frmMaterias();
             materias.ShowDialog();
+        }
+
+        private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
