@@ -17,7 +17,8 @@ namespace WinMySQL
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmAlumnos alumnos = new frmAlumnos();
+                        alumnos.ShowDialog();
         }
     }
 }
