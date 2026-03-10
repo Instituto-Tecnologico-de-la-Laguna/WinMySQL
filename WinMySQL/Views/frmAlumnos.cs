@@ -6,12 +6,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using WinMySQL.Clases;
 
 
 namespace WinMySQL.Views
 {
     public partial class frmAlumnos : Form
     {
+        Datos datos = new Datos();
         public frmAlumnos()
         {
             InitializeComponent();
@@ -47,6 +49,12 @@ namespace WinMySQL.Views
                             drNew[col - 1] = worksheet.Cells[row, col].Value.ToString();
                         }
                         dt.Rows.Add(drNew);
+                        String comando = $"Insert Into Alumnos(nocontrol,nombre," +
+                            $"paterno,materno) Values('{drNew.ItemArray[0]}','" +
+                            $"{drNew.ItemArray[1]}','{drNew.ItemArray[2]}','" +
+                            $"{drNew.ItemArray[3]}')";
+                        datos.ejecutarComando(comando);
+
                     }
                     //dgvAlumnos.DataSource = dt;
 
