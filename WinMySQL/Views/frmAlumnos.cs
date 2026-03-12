@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.PerformanceData;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -19,16 +20,12 @@ namespace WinMySQL.Views
             InitializeComponent();
         }
 
-        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
         private void btnImportar_Click(object sender, EventArgs e)
         {
             String path;
-            DialogResult dr=ofdExcel.ShowDialog();
-            if (dr == DialogResult.OK) {
+            DialogResult dr = ofdExcel.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
                 path = ofdExcel.FileName;
                 ExcelPackage.License.SetNonCommercialPersonal("Luis Mota"); //Libreria funcion no Comercial
                 using (var package = new ExcelPackage(new FileInfo(path)))
@@ -62,5 +59,28 @@ namespace WinMySQL.Views
                 }
             }
         }
+
+
+        private void frmAlumnos_Load(object sender, EventArgs e)
+        {
+            Busqueda();
+
+        }
+        private void txtAlumno_TextChanged(object sender, EventArgs e)
+        {
+            Busqueda();
+        }
+
+        private void Busqueda()
+        {
+            DataSet ds = datos.ejecutar($"Select nocontrol,nombre,paterno,materno From Alumnos" +
+                $" Where nombre like '{txtAlumno.Text}%'");
+            if (ds != null)
+            {
+                dgvAlumnos.DataSource = ds.Tables[0];
+            }
+        }
+
     }
+
 }
