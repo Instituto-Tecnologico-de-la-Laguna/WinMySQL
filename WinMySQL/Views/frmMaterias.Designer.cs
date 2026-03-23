@@ -80,6 +80,8 @@
             txtMateria.Name = "txtMateria";
             txtMateria.Size = new Size(550, 31);
             txtMateria.TabIndex = 1;
+
+            txtMateria.KeyUp += txtMateria_KeyUp;
             // 
             // label1
             // 
@@ -111,12 +113,12 @@
             cmsData.ImageScalingSize = new Size(24, 24);
             cmsData.Items.AddRange(new ToolStripItem[] { eliminarToolStripMenuItem });
             cmsData.Name = "cmsData";
-            cmsData.Size = new Size(241, 69);
+            cmsData.Size = new Size(147, 36);
             // 
             // eliminarToolStripMenuItem
             // 
             eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            eliminarToolStripMenuItem.Size = new Size(240, 32);
+            eliminarToolStripMenuItem.Size = new Size(146, 32);
             eliminarToolStripMenuItem.Text = "Eliminar";
             eliminarToolStripMenuItem.Click += eliminarToolStripMenuItem_Click;
             // 

@@ -57,10 +57,10 @@ namespace WinMySQL.Views
             int idMateria = Convert.ToInt32(dgvMaterias.CurrentRow.Cells[0].Value);
             if (MessageBox.Show("Deseas eliminar la materia:"
                 + dgvMaterias.CurrentRow.Cells[1].Value.ToString(),
-                "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == 
+                "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
                 DialogResult.Yes)
             {
-                bool f=datos.ejecutarComando($"Delete from Materias where idMateria=" +
+                bool f = datos.ejecutarComando($"Delete from Materias where idMateria=" +
                     $"{idMateria}");
                 if (f)
                 {
@@ -69,6 +69,20 @@ namespace WinMySQL.Views
                 else
                 {
                     MessageBox.Show("Error", "Sistema");
+                }
+            }
+        }
+
+      
+
+        private void txtMateria_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            { 
+                DataSet ds= datos.ejecutar($"Select * from Materias where nombre like '%{txtMateria.Text}%'");
+                if(ds != null)
+                {
+                    dgvMaterias.DataSource = ds.Tables[0];
                 }
             }
         }
