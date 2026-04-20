@@ -35,6 +35,8 @@
             materiasToolStripMenuItem = new ToolStripMenuItem();
             alumnosToolStripMenuItem = new ToolStripMenuItem();
             profesoresToolStripMenuItem = new ToolStripMenuItem();
+            ejemploToolStripMenuItem = new ToolStripMenuItem();
+            ejemplo2ToolStripMenuItem = new ToolStripMenuItem();
             mnuPrincipal.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,7 +65,7 @@
             // 
             // catalogoToolStripMenuItem
             // 
-            catalogoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { materiasToolStripMenuItem, alumnosToolStripMenuItem, profesoresToolStripMenuItem });
+            catalogoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { materiasToolStripMenuItem, alumnosToolStripMenuItem, profesoresToolStripMenuItem, ejemploToolStripMenuItem, ejemplo2ToolStripMenuItem });
             catalogoToolStripMenuItem.Name = "catalogoToolStripMenuItem";
             catalogoToolStripMenuItem.Size = new Size(100, 29);
             catalogoToolStripMenuItem.Text = "Catalogo";
@@ -87,6 +89,20 @@
             profesoresToolStripMenuItem.Name = "profesoresToolStripMenuItem";
             profesoresToolStripMenuItem.Size = new Size(270, 34);
             profesoresToolStripMenuItem.Text = "Profesores";
+            // 
+            // ejemploToolStripMenuItem
+            // 
+            ejemploToolStripMenuItem.Name = "ejemploToolStripMenuItem";
+            ejemploToolStripMenuItem.Size = new Size(270, 34);
+            ejemploToolStripMenuItem.Text = "Ejemplo";
+            ejemploToolStripMenuItem.Click += ejemploToolStripMenuItem_Click;
+            // 
+            // ejemplo2ToolStripMenuItem
+            // 
+            ejemplo2ToolStripMenuItem.Name = "ejemplo2ToolStripMenuItem";
+            ejemplo2ToolStripMenuItem.Size = new Size(270, 34);
+            ejemplo2ToolStripMenuItem.Text = "Ejemplo 2";
+            ejemplo2ToolStripMenuItem.Click += ejemplo2ToolStripMenuItem_Click;
             // 
             // frmMenu
             // 
@@ -112,5 +128,7 @@
         private ToolStripMenuItem materiasToolStripMenuItem;
         private ToolStripMenuItem alumnosToolStripMenuItem;
         private ToolStripMenuItem profesoresToolStripMenuItem;
+        private ToolStripMenuItem ejemploToolStripMenuItem;
+        private ToolStripMenuItem ejemplo2ToolStripMenuItem;
     }
 }
